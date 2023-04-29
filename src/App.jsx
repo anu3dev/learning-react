@@ -1,7 +1,9 @@
+import WelcomeScreen from "./components/organism/WelcomeScreen/WelcomeScreen";
+
 function App() {
   return (
     <div className="App">
-      Hello
+      <WelcomeScreen />
     </div>
   );
 }
