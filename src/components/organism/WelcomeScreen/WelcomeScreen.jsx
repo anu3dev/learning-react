@@ -1,6 +1,9 @@
+import React, { Suspense } from "react"
+import routes from '../../../routes/routes'
+
 const WelcomeScreen = () => {
     return (
-        <>I am Welcome Screen</>
+        <Suspense fallback>{routes}</Suspense>
     )
 }
 
