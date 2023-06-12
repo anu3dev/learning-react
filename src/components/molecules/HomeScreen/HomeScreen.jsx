@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { update, reset } from '../../../redux/feature/updateUser'
+import { AppContext } from '../../../context';
 import './HomeScreen.scss'
 
 const HomeScreen = () => {
     const userName = useSelector((state) => state.user.userName)
     const dispatch = useDispatch()
+
+    const { text } = useContext(AppContext);
 
     const changeRoute = () => {
         window.location.pathname = '/contact'
@@ -22,6 +25,7 @@ const HomeScreen = () => {
     return (
         <div className='home-screen'>
             <h4 className='home-screen__heading'>I am from HomeScreen and user is {userName}</h4><br></br><br></br>
+            <p>{text}</p>
             <button onClick={changeUser}>Change User</button><br></br><br></br>
             <button onClick={resetUser}>Reset User</button><br></br><br></br>
             <button onClick={changeRoute}>Change Route</button>
